@@ -276,8 +276,14 @@ header.on-image .navlinks a{color:#fff}
 .foot-cols a:hover{color:var(--ink)}
 .bigword{font-size:clamp(90px,23vw,340px);font-weight:800;letter-spacing:-.05em;text-align:center;line-height:.82;
   margin:24px 0 -.08em;padding-top:20px;
-  background:url('/BG.png') center 74%/cover;-webkit-background-clip:text;background-clip:text;
-  color:transparent;-webkit-text-fill-color:transparent;user-select:none}
+  background:url('/BG.png') 50% 72%/175% auto;-webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;user-select:none;
+  animation:wordDrift 22s ease-in-out infinite}
+@keyframes wordDrift{
+  0%,100%{background-position:20% 72%}
+  50%{background-position:80% 56%}
+}
+@media(prefers-reduced-motion:reduce){.bigword{animation:none}}
 .copyrow{display:flex;justify-content:space-between;padding:26px 28px 34px;color:var(--body);font-size:13.5px;
   border-top:1px solid var(--line);flex-wrap:wrap;gap:10px;max-width:1200px;margin:0 auto}
 
