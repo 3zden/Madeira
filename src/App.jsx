@@ -84,6 +84,39 @@ const testimonials = [
     text: 'Booked a local guide through Madeira in Oaxaca. Ate at places I would never have found on my own.' },
 ]
 
+const contact = {
+  address: 'Rua da Madeira 12, Funchal, Portugal',
+  phone: '+351 291 000 000',
+  email: 'hello@madeira.travel',
+}
+
+const socialLinks = [
+  { name: 'instagram', label: 'Instagram', href: '#' },
+  { name: 'x', label: 'X', href: '#' },
+  { name: 'youtube', label: 'YouTube', href: '#' },
+  { name: 'linkedin', label: 'LinkedIn', href: '#' },
+]
+
+const footerCols = [
+  { title: 'Product', links: [
+    { label: 'Travel feed', href: '#capabilities' },
+    { label: 'Buddy matching', href: '#match' },
+    { label: 'AI assistant', href: '#features' },
+    { label: 'Communities', href: '#community' },
+  ] },
+  { title: 'Company', links: [
+    { label: 'About', href: '#' },
+    { label: 'Pricing', href: '#pricing' },
+    { label: 'Safety', href: '#' },
+    { label: 'Local experts', href: '#' },
+  ] },
+  { title: 'Legal', links: [
+    { label: 'Privacy', href: '#' },
+    { label: 'Terms', href: '#' },
+    { label: 'Cookies', href: '#' },
+  ] },
+]
+
 export default function App() {
   const [cap, setCap] = useState(0)
   const [asked, setAsked] = useState(false)
@@ -326,37 +359,32 @@ export default function App() {
           <div className="foot-top">
             <div className="getintouch">
               <h4>Get in touch</h4>
-              <div className="addr"><Icon name="pin" size={16} /> Rua da Madeira 12, Funchal, Portugal</div>
+              <div className="addr"><Icon name="pin" size={16} /> {contact.address}</div>
               <div className="contact">
-                <div className="c">+351 291 000 000<br/>hello@madeira.travel</div>
+                <div className="c">
+                  <a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a><br />
+                  <a href={`mailto:${contact.email}`}>{contact.email}</a>
+                </div>
                 <div className="socials">
-                  <a href="#" aria-label="Instagram"><Icon name="instagram" size={18} /></a>
-                  <a href="#" aria-label="X"><Icon name="x" size={18} /></a>
-                  <a href="#" aria-label="YouTube"><Icon name="youtube" size={18} /></a>
-                  <a href="#" aria-label="LinkedIn"><Icon name="linkedin" size={18} /></a>
+                  {socialLinks.map(s => (
+                    <a key={s.name} href={s.href} aria-label={s.label}><Icon name={s.name} size={18} /></a>
+                  ))}
                 </div>
               </div>
             </div>
             <div className="foot-cols">
-              <div>
-                <h5>Product</h5>
-                <a href="#capabilities">Travel feed</a><a href="#match">Buddy matching</a>
-                <a href="#features">AI assistant</a><a href="#community">Communities</a>
-              </div>
-              <div>
-                <h5>Company</h5>
-                <a href="#">About</a><a href="#pricing">Pricing</a><a href="#">Safety</a><a href="#">Local experts</a>
-              </div>
-              <div>
-                <h5>Legal</h5>
-                <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a>
-              </div>
+              {footerCols.map(col => (
+                <div key={col.title}>
+                  <h5>{col.title}</h5>
+                  {col.links.map(l => <a key={l.label} href={l.href}>{l.label}</a>)}
+                </div>
+              ))}
             </div>
           </div>
         </div>
         <div className="bigword">madeira</div>
         <div className="copyrow">
-          <span>© 2026 Madeira · Travel together</span>
+          <span>© {new Date().getFullYear()} Madeira · Travel together</span>
           <span>Made for travelers, everywhere</span>
         </div>
       </footer>
