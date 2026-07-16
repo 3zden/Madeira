@@ -275,15 +275,16 @@ header.on-image .navlinks a{color:#fff}
 .foot-cols a{display:block;font-size:14.5px;color:var(--body);margin-bottom:11px}
 .foot-cols a:hover{color:var(--ink)}
 .bigword{font-size:clamp(90px,23vw,340px);font-weight:800;letter-spacing:-.05em;text-align:center;line-height:.82;
-  margin:24px 0 -.08em;padding-top:20px;
-  background:url('/BG.png') 50% 72%/175% auto;-webkit-background-clip:text;background-clip:text;
-  color:transparent;-webkit-text-fill-color:transparent;user-select:none;
-  animation:wordDrift 22s ease-in-out infinite}
-@keyframes wordDrift{
-  0%,100%{background-position:20% 72%}
-  50%{background-position:80% 56%}
-}
-@media(prefers-reduced-motion:reduce){.bigword{animation:none}}
+  margin:24px 0 -.08em;padding-top:20px;position:relative;
+  background:url('/BG.png') 50% 72%/cover;-webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;user-select:none}
+/* warm morocco.png clipped to the same letters, crossfaded in on hover */
+.bigword::after{content:"madeira";position:absolute;inset:0;padding-top:20px;
+  background:url('/morocco.png') 50% 44%/cover;-webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;
+  opacity:0;transition:opacity .6s ease;pointer-events:none}
+.bigword:hover::after{opacity:1}
+@media(prefers-reduced-motion:reduce){.bigword::after{transition:none}}
 .copyrow{display:flex;justify-content:space-between;padding:26px 28px 34px;color:var(--body);font-size:13.5px;
   border-top:1px solid var(--line);flex-wrap:wrap;gap:10px;max-width:1200px;margin:0 auto}
 
