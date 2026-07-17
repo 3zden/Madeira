@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Icon } from './icons'
 import Waitlist from './Waitlist'
+import SlicedText from './SlicedText'
 
 const stats = [
   { num: '38,000+', lbl: 'Trips shared' },
@@ -72,17 +73,17 @@ const monetization = [
 
 const testimonials = [
   { name: 'Rakesh Goyal', role: 'solo traveler, ', co: 'Bangalore', seed: 'a1',
-    text: 'Matched with two people for Sri Lanka and it just worked — same budget, same pace. The compatibility score is scary accurate.' },
+    text: "Signed up the moment I found this — compatibility matching is exactly what solo trips have been missing. Counting down to launch." },
   { name: 'Ng Yi Ying', role: 'nomad in ', co: 'Lisbon', seed: 'a5',
-    text: 'The AI planned a 6-day Morocco trip under budget and every recommendation held up. I barely edited it.' },
+    text: "An AI that plans the whole trip and a real travel community in one app? I've waited years for this. First in line." },
   { name: 'Sofia Marconi', role: 'backpacker, ', co: 'Milan', seed: 'a9',
-    text: 'The Japan community answered my visa question in an hour. Better than three hours of Googling.' },
+    text: "Joined the waitlist immediately. If the Japan community is half as good as it sounds, I'm done Googling visa rules." },
   { name: 'Tomas Nowak', role: 'weekend hiker, ', co: 'Kraków', seed: 'a12',
-    text: 'Split every expense with my group in the app. No awkward "who owes what" at the airport this time.' },
+    text: "Built-in expense splitting for group trips is the feature I didn't know I needed. Can't wait to ditch the spreadsheets." },
   { name: 'Amara Okafor', role: 'solo female traveler, ', co: 'Lagos', seed: 'a3',
-    text: 'Passport verification and partner reviews made meeting a stranger to travel with feel actually safe.' },
+    text: "Passport verification and partner reviews are why I'm excited — meeting a stranger to travel with could finally feel safe. Waiting eagerly." },
   { name: 'Diego Herrera', role: 'food traveler, ', co: 'Mexico City', seed: 'a7',
-    text: 'Booked a local guide through Madeira in Oaxaca. Ate at places I would never have found on my own.' },
+    text: "The local-experts marketplace sold me instantly. Already on the list to book a guide the day it opens." },
 ]
 
 const contact = {
@@ -145,7 +146,7 @@ export default function App() {
             <span className="chip"><span className="star"><Icon name="star" size={15} /></span> <span className="g">4.9</span> loved by travelers</span>
             <span className="chip"><Icon name="plane" size={15} /> 210k+ travelers</span>
           </div>
-          <h1>Travel is better<br/><span className="grey">with the right people.</span></h1>
+          <h1>Travel is better<br/><SlicedText className="hero-serif" text="with the right people." /></h1>
           <p className="sub">Share trips, ask the community, match with compatible buddies, and let AI plan the whole journey — in one app.</p>
           <div className="cta-row">
             <a className="btn primary" href="#waitlist">Join the waitlist</a>
@@ -331,10 +332,10 @@ export default function App() {
           <div className="panel pull">
             <div className="center">
               <div className="badges">
-                <span className="chip"><span className="star"><Icon name="star" size={15} /></span> 4.9 average rating</span>
-                <span className="chip"><Icon name="check" size={15} /> 12,400+ reviews</span>
+                <span className="chip"><Icon name="sparkle" size={15} /> Launching 2026</span>
+                <span className="chip"><Icon name="check" size={15} /> Early access open</span>
               </div>
-              <h2 className="sec-h">Trusted by <span className="grey">210,000+ travelers</span></h2>
+              <h2 className="sec-h">Travelers already <span className="grey">can't wait to get in</span></h2>
             </div>
             <div className="masonry">
               {testimonials.map(t => (

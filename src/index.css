@@ -71,6 +71,13 @@ header.on-image .navlinks a{color:#fff}
 .hero h1{font-size:clamp(46px,7.4vw,92px);font-weight:800;letter-spacing:-.035em;line-height:1;
   text-shadow:0 2px 26px rgba(6,16,40,.28);text-wrap:balance}
 .hero h1 .grey{color:rgba(255,255,255,.6)}
+/* italic-serif second line + vertical-slice reveal */
+.hero .hero-serif{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;
+  color:#fff;letter-spacing:-.005em}
+.sliced{position:relative;display:inline-block}
+.sliced-sizer{opacity:0}
+.sliced-piece{position:absolute;inset:0;white-space:nowrap;will-change:opacity;backface-visibility:hidden}
+@media(prefers-reduced-motion:reduce){.sliced-sizer{opacity:1}.sliced-piece{display:none}}
 .hero .sub{font-size:clamp(17px,2.1vw,22px);font-weight:500;max-width:600px;margin:26px auto 0;
   text-shadow:0 1px 14px rgba(6,16,40,.3)}
 .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
@@ -120,7 +127,6 @@ header.on-image .navlinks a{color:#fff}
 .showcard{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;
   box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 12px 34px rgba(20,40,80,.06);
   transition:transform .18s ease,box-shadow .18s ease}
-.showcard:hover{transform:translateY(-4px);box-shadow:0 20px 46px rgba(20,40,80,.13)}
 .showcard.tall{grid-row:span 2}
 .showpic{height:150px;border-radius:16px;margin-bottom:16px;position:relative;overflow:hidden}
 .showcard.tall .showpic{height:230px}
@@ -142,7 +148,6 @@ header.on-image .navlinks a{color:#fff}
 .fcard{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px;position:relative;overflow:hidden;
   display:flex;flex-direction:column;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 12px 34px rgba(20,40,80,.06);
   transition:transform .18s ease,box-shadow .18s ease}
-.fcard:hover{transform:translateY(-4px);box-shadow:0 22px 50px rgba(20,40,80,.13)}
 .fcard.lg{grid-column:span 2;grid-row:span 2}
 .ficon{width:46px;height:46px;border-radius:14px;background:var(--panel);display:grid;place-items:center;
   font-size:22px;box-shadow:0 1px 0 rgba(255,255,255,.9) inset}
@@ -205,7 +210,6 @@ header.on-image .navlinks a{color:#fff}
 .dcard{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px;position:relative;
   box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 12px 34px rgba(20,40,80,.06);
   transition:transform .18s ease,box-shadow .18s ease}
-.dcard:hover{transform:translateY(-4px);box-shadow:0 22px 50px rgba(20,40,80,.13)}
 .dcard.feat{background:linear-gradient(160deg,#12362a,#0c221b);color:#fff;border-color:transparent}
 .dicon{width:48px;height:48px;border-radius:14px;background:var(--panel);display:grid;place-items:center;font-size:22px}
 .dcard.feat .dicon{background:rgba(255,255,255,.1);color:#fff}
