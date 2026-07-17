@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Icon } from './icons'
 import Waitlist from './Waitlist'
 import SlicedText from './SlicedText'
@@ -122,11 +122,19 @@ const footerCols = [
 export default function App() {
   const [cap, setCap] = useState(0)
   const [asked, setAsked] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
     <>
       {/* NAV */}
-      <header className="on-image">
+      <header className={scrolled ? 'scrolled' : 'on-image'}>
         <nav>
           <a className="brand" href="#">madeira<span className="dot">.</span></a>
           <div className="navlinks">

@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rtk ls *)",
+      "Bash(rtk find *)",
+      "Bash(npm --version)",
+      "Bash(npm install *)",
+      "Bash(rtk npm *)",
+      "Bash(npm run *)",
+      "Bash(python3 -c ' *)",
+      "Bash(sed -i 's/Wanderly/Madeira/g' src/App.jsx)",
+      "Bash(rtk grep *)",
+      "Bash(rtk curl *)",
+      "Bash(git config *)",
+      "Bash(ssh -o StrictHostKeyChecking=accept-new -o BatchMode=yes -T git@github.com)",
+      "Bash(rtk read *)",
+      "Bash(rtk git *)",
+      "Bash(git ls-remote *)",
+      "Bash(set -e)",
+      "Bash(git rm *)",
+      "Bash(git add *)",
+      "Bash(git commit --amend --quiet -m ' *)",
+      "Bash(git ls-tree *)",
+      "Bash(git remote *)",
+      "Bash(git commit --quiet -m ' *)",
+      "Bash(git push *)",
+      "Bash(node -p \"const p=require\\('./package.json'\\); \\({react:p.dependencies.react, vite:p.devDependencies.vite, plugin:p.devDependencies['@vitejs/plugin-react']}\\)\")",
+      "Bash(git commit *)"
+    ]
+  }
+}
