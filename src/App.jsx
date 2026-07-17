@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Icon } from './icons'
+import Waitlist from './Waitlist'
 
 const stats = [
   { num: '38,000+', lbl: 'Trips shared' },
@@ -133,7 +134,7 @@ export default function App() {
             <a href="#pricing">Pricing</a>
             <a href="#community">Community</a>
           </div>
-          <a className="btn glass" href="#pricing">Get the app</a>
+          <a className="btn glass" href="#waitlist">Join the waitlist</a>
         </nav>
       </header>
 
@@ -147,10 +148,10 @@ export default function App() {
           <h1>Travel is better<br/><span className="grey">with the right people.</span></h1>
           <p className="sub">Share trips, ask the community, match with compatible buddies, and let AI plan the whole journey — in one app.</p>
           <div className="cta-row">
-            <a className="btn primary" href="#pricing">Get started free</a>
+            <a className="btn primary" href="#waitlist">Join the waitlist</a>
             <a className="btn glass" href="#match">Find a travel buddy</a>
           </div>
-          <div className="trust">Verified travelers · Local-first communities · Free to start</div>
+          <div className="trust">Launching soon · Free to join · No spam, just launch news</div>
         </div>
       </section>
 
@@ -182,7 +183,7 @@ export default function App() {
                 ))}
               </div>
               <div className="cap-img" />
-              <a className="btn dark" href="#pricing">Get started</a>
+              <a className="btn dark" href="#waitlist">Join the waitlist</a>
             </div>
           </div>
           <div className="capshow">
@@ -312,16 +313,16 @@ export default function App() {
               <h4>{p.title}</h4>
               <div className="price">{p.price}<small> {p.sub}</small></div>
               <ul className="plist">{p.bullets.map(b => <li key={b}>{b}</li>)}</ul>
-              <a className={'btn ' + (p.featured ? 'primary' : 'ghost')} href="#">{p.cta}</a>
+              <a className={'btn ' + (p.featured ? 'primary' : 'ghost')} href="#waitlist">{p.cta}</a>
             </div>
           ))}
         </div>
       </section>
 
-      {/* GREEN CTA BAND */}
-      <section className="cta-band">
-        <h2>Plan your next trip with people who get it</h2>
-        <a className="btn glass" href="#pricing">Get started free</a>
+      {/* GREEN CTA BAND → WAITLIST */}
+      <section className="cta-band" id="waitlist">
+        <h2>Be first through the door when Madeira opens</h2>
+        <Waitlist />
       </section>
 
       {/* TESTIMONIALS */}
